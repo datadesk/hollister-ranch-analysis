@@ -1,0 +1,458 @@
+
+<html>
+<head>
+<title>County of Santa Barbara Online - Taxes</title>
+<link href="../styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/javascript">
+<!--
+if (document.images)
+{
+off1 = new Image(150, 26); off1.src = "/images/t-neighborhoods.gif";
+off2 = new Image(132, 26); off2.src = "/images/t-health.gif";
+off3 = new Image(131, 26); off3.src = "/images/t-safety.gif";
+off4 = new Image(145, 26); off4.src = "/images/t-traffic.gif";
+off5 = new Image(76, 26); off5.src = "/images/t-recreation.gif";
+off6 = new Image(118, 26); off6.src = "/images/t-county.gif";
+on1 = new Image(150, 26); on1.src = "/images/t-neighborhoods_on.gif";
+on2 = new Image(132, 26); on2.src = "/images/t-health_on.gif";
+on3 = new Image(131, 26); on3.src = "/images/t-safety_on.gif";
+on4 = new Image(145, 26); on4.src = "/images/t-traffic_on.gif";
+on5 = new Image(76, 26); on5.src = "/images/t-recreation_on.gif";
+on6 = new Image(118, 26); on6.src = "/images/t-county_on.gif";
+}
+
+function mOver(num)
+{
+if (document.images)
+{
+document.images['button'+num].src = eval('on'+num+'.src');
+}
+}
+
+function mOut(num)
+{
+if (document.images)
+{
+document.images['button'+num].src = eval('off'+num+'.src');
+}
+}
+// -->
+</script>
+<script language="JavaScript">
+<!--
+  function setFocus(form, element, select) {
+    if (typeof select == 'undefined') select = false;
+    document.forms[form].elements[element].focus();
+    if (select) document.forms[form].elements[element].select();
+  }
+  
+  function isEmpty(v) {
+    if (v == null) return true;
+    if (v == '') return true;
+    return false;
+  }
+  
+  function validateDate(form, element) {
+    var d, delim, n, s, v;
+    v = document.forms[form].elements[element].value;
+    if (!isEmpty(v)) {
+      if (v.indexOf('/') != -1) {s = v.split('/'); delim = '/';}
+      else if (v.indexOf('-') != -1) {s = v.split('-'); delim = '-';}
+      else if (v.indexOf(' ') != -1) {s = v.split(' '); delim = ' ';}
+      else {alert('You must enter a valid date (mon/day/year).'); setFocus(form, element, true); return false;};
+      if (s.length == 2) {d = new Date(); s[2] = d.getFullYear()}
+      else if (s.length == 3 && s[2].length == 2) {if (s[2] < '50') {s[2] = '20'+s[2]} else {s[2] = '19'+s[2]}};
+      v = s[0]+delim+s[1]+delim+s[2];
+      n = Date.parse(v);
+      if (isNaN(n)) {alert('You must enter a valid date (mon/day/year).'); setFocus(form, element, true); return false;}
+      d = new Date(n);
+      document.forms[form].elements[element].value = formatDate(d);
+    }
+  }
+  
+  function formatDate(u) {
+    return (u.getMonth()+1)+'/'+u.getDate()+'/'+u.getFullYear();
+  }
+
+  function validateNumber(form, element, decimals) {
+    var i, n, s, v;
+    if (typeof decimals == 'undefined') decimals = 0;
+    v = document.forms[form].elements[element].value;
+    if (!isEmpty(v)) {
+      n = new Number(v);
+      if (isNaN(n)) {alert('You must enter a valid number.'); setFocus(form, element, true); return false;}
+      document.forms[form].elements[element].value = formatNumber(n, decimals);
+    }
+  }
+  
+  function formatNumber(u, decimals) {
+    var f, i, s;
+    if (decimals > 0) {
+      s = new String(u);
+      s = s.split('.');
+      if (s.length == 2 && s[1] > 0) {
+        s[1] = Math.round(('0.'+s[1]) * Math.pow(10, decimals));
+        if (s[1] < 10) s[1] = '0'+s[1];
+      }
+      else {s[1] = ''; for (i = 1; i <= decimals; i++) s[1] = s[1]+'0'};
+      f = s[0]+'.'+s[1];
+    }
+    else {
+      f = s;
+    }
+    return f;
+  }
+
+  function rnd() {
+        rnd.seed=rnd.today.getTime();
+        rnd.seed = (rnd.seed*9301+49297) % 233280;
+        return rnd.seed/(233280.0);
+  }
+
+  function rand(number) {
+        return Math.ceil(rnd()*number);
+  }
+
+//-->
+</script>
+
+<meta name="GENERATOR" content="Microsof FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#6699CC">
+<tr><td nowrap><a href="http://www.countyofsb.org"><img src="/images/logo.gif" width="132"
+height="110" border="0" alt="County of Santa Barbara Home"></a><img src="/images/masthead-AC.gif"
+height="110" width="468" border="0" alt="County of Santa Barbara Online"></td><td align="right">
+<script language="JavaScript" type="text/javascript">
+function image()
+{
+};
+image = new image();
+number = 0;
+image[number++] = "<img src='/images/photo-1.jpg' width='152' height='103' border='0' alt='Photo of Santa Barbara'>"
+image[number++] = "<img src='/images/photo-2.jpg' width='152' height='103' border='0' alt='Photo of Santa Barbara'>"
+image[number++] = "<img src='/images/photo-3.jpg' width='152' height='103' border='0' alt='Photo of Santa Barbara'>"
+image[number++] = "<img src='/images/photo-4.jpg' width='152' height='103' border='0' alt='Photo of Santa Barbara'>"
+image[number++] = "<img src='/images/photo-5.jpg' width='152' height='103' border='0' alt='Photo of Santa Barbara'>"
+image[number++] = "<img src='/images/photo-6.jpg' width='152' height='103' border='0' alt='Photo of Santa Barbara'>"
+image[number++] = "<img src='/images/photo-7.jpg' width='152' height='103' border='0' alt='Photo of Santa Barbara'>"
+increment = Math.floor(Math.random() * number);
+document.write(image[increment]);
+</script></td></tr></table><table border="0" width="100%" cellpadding="0" cellspacing="0"><tr bgcolor="#295A9C">
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+<tr bgcolor="#295A9C">
+<td nowrap bgcolor="#295A9C">
+<p align="center"><strong><a href="http://www.countyofsb.org/living.aspx?id=512" class="topbar">Living</a> <font color="F29B2B">|</font> 
+<a href="http://www.countyofsb.org/working.aspx?id=514" class="topbar">Working</a> <font color="F29B2B">|</font> 
+<a href="http://www.countyofsb.org/business.aspx?id=40174" class="topbar">Doing Business</a> <font color="F29B2B">|</font> 
+<a href="http://www.countyofsb.org/visiting.aspx?id=516" class="topbar">Visiting</a> <font color="F29B2B">|</font> 
+<a href="http://www.countyofsb.org/emergencyinfo.aspx" class="topbar">Emergencies</a> <font color="F29B2B">|</font> 
+<a href="http://www.countyofsb.org/government.aspx?id=520" class="topbar">Government</a> </strong></p></td>
+<td background="/images/t-extension.gif"><img src="/images/shim.gif" width="1" height="26" border="0" alt=" " />    </td>
+</tr>
+<tr bgcolor="#295A9C">
+  <td colspan="2" nowrap bgcolor="#295A9C"><img src="/images/r-div1.gif" alt="" width="100%" height="1" /></td>
+  </tr>
+</table>
+
+
+ 
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td bgcolor="#295A9C" align="center" width="100%" height="85%">
+	<font class="location" style="font-size: 9pt"><font face="Tahoma"><b><font color="#CCCCCC">[</font></b></font><font color="#CCCCCC"><font face="Tahoma">&nbsp;</font>
+	
+	</font> 
+      <b>&nbsp;<font color="#CCCCCC"><font face="Tahoma">You Are Here</font>:</font></b>&nbsp; 
+       
+	<b><font face="Tahoma"> 
+	<a href="http://www.countyofsb.org" class="location">
+	<font color="#CCCCCC">County 
+      Home</font></a><font color="#CCCCCC"> &gt; </font> 
+	<a href="http://www.countyofsb.org/auditor/home.asp" class="location">
+	<font color="#CCCCCC">Auditor-Controller's Office</font></a></font></b>&nbsp;
+	<b><font color="#CCCCCC" face="Tahoma">]</font></b></font></td>
+  </tr>
+
+ 
+</table>
+
+<table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0">
+<tr><td valign="top" width="150">
+<table border="0" cellpadding="0" cellspacing="0" width="150">
+<tr><td colspan="2" background="/images/dot_clear.gif"><img src="/images/search-head2.gif" width="150" height="25" border="0" alt="Site Search"></td></tr>
+<tr><td colspan="2" bgcolor="#CECECE"><form action="http://www.countyofsb.org/search_results.asp" id="searchbox_010511186908738127658:aqyhe8ivexo">
+	<table border="0" cellpadding="0" cellspacing="0">
+    	<tr>
+       	<td colspan="3"><img src="/images/shim.gif" width="1" height="8" border="0" alt=" "></td>
+		</tr>
+		<tr>
+			<td rowspan="2"><img src="/images/shim.gif" width="10" height="1" border="0" alt=" "></td>
+			<td valign="top" align="right">
+				<input type="hidden" name="cx" value="010511186908738127658:aqyhe8ivexo" />
+				<input type="hidden" name="cof" value="FORID:11" />
+				<input type="text" name="q" size="15" />
+			</td>
+ 			<td valign="top" width="30"><input type="image" name="sa" src="/images/b-go-g.gif" width="24" height="24" border="0" alt="GO!"></td>
+		</tr>
+	</table>
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_010511186908738127658%3Aaqyhe8ivexo"></script>
+<tr><td><img src="/images/l-div.gif" width="150" height="9" border="0"></td></tr>
+<tr valign="center" bgcolor="#CECECE"><td id="menuitem1" height="22" width="150"><span class="menu-item">&nbsp;&nbsp;&nbsp;<a class="menu-item" style="{text-decoration: none}"href="/welcome.asp" onmouseover="if (document.all) document.all('menuitem1').bgColor='#FFFFFF'"onmouseout="if (document.all) document.all('menuitem1').bgColor='#CECECE'"><b>Welcome</b></a></span></td></tr>
+<tr><td><img src="/images/l-div.gif" width="150" height="3"border="0"></td></tr>
+<tr valign="center" bgcolor="#CECECE"><td id="menuitem2" height="22" width="150"><span class="menu-item">&nbsp;&nbsp;&nbsp;<a class="menu-item" style="{text-decoration: none}"href="/propertytax.asp" onmouseover="if (document.all) document.all('menuitem2').bgColor='#FFFFFF'"onmouseout="if (document.all) document.all('menuitem2').bgColor='#CECECE'"><b>Property Tax</b></a></span></td></tr>
+<tr><td><img src="/images/l-div.gif" width="150" height="3"border="0"></td></tr>
+<tr valign="center" bgcolor="#CECECE"><td id="menuitem3" height="22" width="150"><span class="menu-item">&nbsp;&nbsp;&nbsp;<a class="menu-item" style="{text-decoration: none}"href="/salesandusetax.asp" onmouseover="if (document.all) document.all('menuitem3').bgColor='#FFFFFF'"onmouseout="if (document.all) document.all('menuitem3').bgColor='#CECECE'"><b>Sales & Use Tax</b></a></span></td></tr>
+<tr><td><img src="/images/l-div.gif" width="150" height="3"border="0"></td></tr>
+<tr valign="center" bgcolor="#CECECE"><td id="menuitem4" height="22" width="150"><span class="menu-item">&nbsp;&nbsp;&nbsp;<a class="menu-item" style="{text-decoration: none}"href="/tot.asp" onmouseover="if (document.all) document.all('menuitem4').bgColor='#FFFFFF'"onmouseout="if (document.all) document.all('menuitem4').bgColor='#CECECE'"><b>Transient Occupancy</b></a></span></td></tr>
+<tr><td><img src="/images/l-div.gif" width="150" height="3"border="0"></td></tr>
+<tr valign="center" bgcolor="#CECECE"><td id="menuitem5" height="22" width="150"><span class="menu-item">&nbsp;&nbsp;&nbsp;<a class="menu-item" style="{text-decoration: none}"href="/notavailable.asp" onmouseover="if (document.all) document.all('menuitem5').bgColor='#FFFFFF'"onmouseout="if (document.all) document.all('menuitem5').bgColor='#CECECE'"><b>Motor Vehicle in Lieu</b></a></span></td></tr>
+<tr><td><img src="/images/l-div.gif" width="150" height="3"border="0"></td></tr>
+<tr valign="center" bgcolor="#CECECE"><td id="menuitem6" height="22" width="150"><span class="menu-item">&nbsp;&nbsp;&nbsp;<a class="menu-item" style="{text-decoration: none}"href="/notavailable.asp" onmouseover="if (document.all) document.all('menuitem6').bgColor='#FFFFFF'"onmouseout="if (document.all) document.all('menuitem6').bgColor='#CECECE'"><b>Help</b></a></span></td></tr>
+<tr><td><img src="/images/l-div.gif" width="150" height="3"border="0"></td></tr>
+<tr><td><img src="/images/l-div.gif" width="150" height="9"border="0"></td></tr></table>
+</td>
+<td valign="top">
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+<tr><td valign="top" height="10" background="/images/c-shadow.gif" colspan="3"></td></tr>
+<tr><td width="10"><img src="/images/dot_clear.gif" width="1" height="1" border="0"></td>
+<td valign="top"><img src="/images/dot_clear.gif" width="403" height="1" border="0"><br>
+
+<h1>Where your property taxes go...</h><br><br>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="/images/dot_clear.gif" width="100" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="75" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="100" height="1"></td>
+</tr>
+<tr>
+<td colspan="7"><span class="report-title"><b>2018 Secured Property Taxes For Assessor Parcel Number (APN): 083-690-008<b></span></td></tr>
+<tr>
+<td colspan="7"><img src="/images/dot_clear.gif" width="1" height="4"></td></tr>
+<tr valign="bottom">
+<td align="left"><span class="report-detail"><nobr>Situs</nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td align="left"><span class="report-detail"><nobr>Tax Rate Area / Jurisdiction</nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td align="right"><span class="report-detail"><nobr>Net Assessed Value</nobr></span></td>
+</tr>
+<tr>
+<td bgcolor="#333333"><img src="/images/dot_clear.gif" width="1" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td bgcolor="#333333"><img src="/images/dot_clear.gif" width="1" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td bgcolor="#333333"><img src="/images/dot_clear.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>0  </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="left" height="17"><span class="report-detail"><a class="report-detail-link" href="taxrates.asp?FiscalYear=2018&TRA=094003          "><nobr>094003 / County</nobr></a></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><a class="report-detail-link" href="parcelvalue.asp?FiscalYear=2018&ParcelNumber=083-690-008                     "><nobr>$417,607</nobr></a></span></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="/images/dot_clear.gif" width="350" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="100" height="1"></td>
+</tr>
+<tr>
+<td colspan="5"><span class="report-title"><b><b></span></td></tr>
+<tr>
+<td colspan="5"><img src="/images/dot_clear.gif" width="1" height="4"></td></tr>
+<tr valign="bottom">
+<td align="left"><span class="report-detail"><nobr>Fund</nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td align="center"><span class="report-detail"><nobr> Amount</nobr></span></td>
+</tr>
+<tr>
+<td bgcolor="#333333"><img src="/images/dot_clear.gif" width="1" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td bgcolor="#333333"><img src="/images/dot_clear.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td colspan="3"><img src="/images/dot_clear.gif" width="1" height="4"></td></tr>
+<tr>
+<td colspan="3"><span class="report-header-1"><b>Basic 1% Property Taxes<b></span></td></tr>
+<tr>
+<td colspan="3"><img src="/images/dot_clear.gif" width="1" height="4"></td></tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>0001 - Santa Barbara County General                             </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>983.95</nobr></span></td>
+</tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>2280 - SB County Fire Protection Dist                           </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>601.71</nobr></span></td>
+</tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>2400 - SB County Flood Cntrl/Wtr Cnsrv                          </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>13.45</nobr></span></td>
+</tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>3050 - Santa Barbara County Wtr Agency                          </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>17.22</nobr></span></td>
+</tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>3750 - Lompoc Hospital Dist                                     </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>87.97</nobr></span></td>
+</tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>4160 - SB Mosquito/Vector Dist                                  </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>0.94</nobr></span></td>
+</tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>7801 - Vista Del Mar Dist General                               </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>738.03</nobr></span></td>
+</tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>8401 - Santa Ynez Valley HS Dist General                        </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>780.69</nobr></span></td>
+</tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>9401 - Allan Hancock CC Dist General                            </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>265.33</nobr></span></td>
+</tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>9801 - County School Srvc Fund                                  </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>180.57</nobr></span></td>
+</tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>9802 - Education Revenue Augmentation                           </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>506.21</nobr></span></td>
+</tr>
+<tr>
+<td><img src="/images/dot_clear.gif" width="1" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td bgcolor="#333333"><img src="/images/dot_clear.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td><img src="/images/dot_clear.gif" width="1" height="4"></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="1" height="4"></td>
+</tr>
+<tr>
+<td colspan="1" align="right" height="17"><span class="report-detail"><i><nobr>Total Basic 1% Property Taxes</nobr></i></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>4,176.07</nobr></span></td>
+</tr>
+<tr>
+<td colspan="3"><img src="/images/dot_clear.gif" width="1" height="4"></td></tr>
+<tr>
+<td colspan="3"><span class="report-header-1"><b>Bonds<b></span></td></tr>
+<tr>
+<td colspan="3"><img src="/images/dot_clear.gif" width="1" height="4"></td></tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>3756 - Lompoc Hospital Bond 2005-E                              </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>296.00</nobr></span></td>
+</tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>8451 - Santa Ynez Valley HS Bond 2016-K                         </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>56.38</nobr></span></td>
+</tr>
+<tr>
+<td colspan="1" align="left" height="17"><span class="report-detail"><nobr>9421 - Allan Hancock CC Bond 2006-I                             </nobr></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>94.21</nobr></span></td>
+</tr>
+<tr>
+<td><img src="/images/dot_clear.gif" width="1" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td bgcolor="#333333"><img src="/images/dot_clear.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td><img src="/images/dot_clear.gif" width="1" height="4"></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="1" height="4"></td>
+</tr>
+<tr>
+<td colspan="1" align="right" height="17"><span class="report-detail"><i><nobr>Total Bonds</nobr></i></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><nobr>446.59</nobr></span></td>
+</tr>
+<tr>
+<td><img src="images/dot_clear.gif" height="4" width="1"></td></tr>
+<td><img src="images/dot_clear.gif" height="4" width="1"></td></tr>
+<tr>
+<tr>
+<td colspan="1" align="right" height="17"><span class="report-detail"><i><b><nobr>TOTAL TAX</nobr></b></i></span></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td colspan="1" align="right" height="17"><span class="report-detail"><b><nobr>4,622.66</nobr></b></span></td>
+</tr>
+<tr>
+<td><img src="/images/dot_clear.gif" width="1" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td bgcolor="#333333"><img src="/images/dot_clear.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td><img src="/images/dot_clear.gif" width="1" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td><img src="/images/dot_clear.gif" width="1" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td bgcolor="#333333"><img src="/images/dot_clear.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td><img src="/images/dot_clear.gif" width="1" height="4"></td>
+<td><img src="/images/dot_clear.gif" width="8" height="1"></td>
+<td><img src="/images/dot_clear.gif" width="1" height="4"></td>
+</tr>
+</table>
+<td valign="top">
+<table border="0" width="10" cellpadding="0" cellspacing="0">
+<tr><td background="/images/dot_clear.gif">&nbsp;</td></tr>
+</table></td></tr></table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p style="margin-left: 13px">&nbsp;</p>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+	<tr bgcolor="#333333">
+		<td>
+		<p style="margin-left: 13px"><font face="Tahoma" style="font-size: 9pt">
+		<img src="/images/shim.gif" width="1" height="1" border="0" alt="end of page content"></font></td>
+	</tr>
+	<tr>
+		<td>
+		<p style="margin-left: 13px"><font face="Tahoma" style="font-size: 9pt">
+		<img src="/images/shim.gif" width="1" height="3" border="0" alt=" "><br>
+		<b><a href="http://www.countyofsb.org/living.aspx?id=512" class="footer">Living</a> |&nbsp;<a href="http://www.countyofsb.org/working.aspx?id=514" class="footer">Working</a>&nbsp;| 
+		<a href="http://www.countyofsb.org/business.aspx?id=40174" class="footer">Doing Business </a>| 
+		<a href="http://www.countyofsb.org/visiting.aspx?id=516" class="footer">Visiting</a>&nbsp;| 
+		<a href="http://www.countyofsb.org/emergencyinfo.aspx" class="footer">Emergencies</a> 
+      | <a href=" http://www.countyofsb.org/government.aspx?id=520" class="footer">Government</a> 
+      | <a href="http://www.countyofsb.org/deptlist.aspx" class="footer">Contact Us</a> | 
+		<a href="http://www.countyofsb.org/" class="footer">Home</a></b><br>
+		<img src="/images/shim.gif" width="1" height="6" border="0" alt=" "><br>
+		<font color="#666666" class="footer">The Official Site of the County of 
+      Santa Barbara<br>
+		<a href="http://www.countyofsb.org/central.aspx?id=486">Site Info</a> 
+      <br>Copyright &#169;2007 County of Santa Barbara. All rights reserved. 
+		</font></font></td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>
